@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adv. GaneshLal R. Pariyal | Advocate & Notary</title>
+  <meta name="description" content="Advocate and Notary services by Adv. GaneshLal R. Pariyal." />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="script.js" as="script" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Language Selection (shows on first visit) -->
+  <div id="language-selection" class="modal" role="dialog" aria-modal="true" aria-labelledby="lang-title">
+    <div class="modal__card" role="document">
+      <h2 id="lang-title" data-i18n="dropdown.header">Select Language</h2>
+      <div class="modal__body" tabindex="0" aria-label="Language choices">
+        <div class="language-choices" style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="button-agree button--primary language-btn" data-lang="en">English</button>
+          <button class="button-agree button--primary language-btn" data-lang="hi">हिन्दी</button>
+          <button class="button-agree button--primary language-btn" data-lang="mr">मराठी</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal (appears after language selection) -->
+  <div id="welcome-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="disc-title" hidden>
+    <div class="modal__card" role="document">
+      <h2 id="disc-title" data-i18n="disclaimer.title">DISCLAIMER</h2>
+      <div class="modal__body" tabindex="0" aria-label="Disclaimer text">
+        <p data-i18n="disclaimer.p1">The rules of the Bar Council of India prohibit law firms from soliciting work or advertising in any manner. By clicking on I AGREE, the user acknowledges that:</p>
+        <ul>
+          <li data-i18n="disclaimer.li1">The user wishes to gain more information about Bhrugunand Legal Firm, its practice areas and its attorneys, for his/her own information and use;</li>
+          <li data-i18n="disclaimer.li2">The information is made available/provided to the user only on his/her specific request and any information obtained or material downloaded from this website is completely at the user's volition and any transmission, receipt or use of this site is not intended to, and will not, create any lawyer-client relationship; and</li>
+          <li data-i18n="disclaimer.li3">None of the information contained on the website is in the nature of a legal opinion or otherwise amounts to any legal advice.</li>
+        </ul>
+        <p data-i18n="disclaimer.p2">Bhrugunand Legal Firm is not liable for any consequence of any action taken by the user relying on material/information provided under this website. In cases where the user has any legal issues, he/she in all cases must seek independent legal advice.</p>
+      </div>
+      <div class="modal__actions">
+        <button id="agree-btn" class="button-agree button--primary" aria-label="Agree and continue" data-i18n="disclaimer.agree">I AGREE</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Page content (blurred while modal is open) -->
+  <div id="site-content">
+    <header class="site-header" id="top">
+      <div class="container header__inner">
+        <div class="brand" aria-label="Brand">
+          <span class="brand__mark" aria-hidden="true">⚖</span>
+          <span class="brand__name" data-i18n="brand.name">Adv. GaneshLal R. Pariyal</span>
+          <span class="brand__tag" data-i18n="brand.tag">Advocate & Notary</span>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list" data-i18n="nav.menu">Menu</button>
+          <ul id="nav-list" class="nav__list">
+            <li><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#details" data-i18n="nav.details">Advocate & Notary Details</a></li>
+            <li><a href="#practice" data-i18n="nav.practice">Practice Areas</a></li>
+            <li><a href="#associations" data-i18n="nav.associations">Panel Associations & Clients</a></li>
+            <li><a href="#handled-cases" data-i18n="nav.handled-cases">Handled-Cases</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- Contact Buttons (Fixed Position) -->
+    <div class="contact-buttons-fixed">
+      <!-- <a href="tel:+919822711822" class="contact-btn contact-btn--call">
+        <i class="fas fa-phone"></i>
+        Call Now
+      </a> -->
+      <a href="https://wa.me/919822711822" target="_blank" class="contact-btn contact-btn--whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span data-i18n="contact.whatsapp">Chat on WhatsApp</span>
+      </a>
+    </div>
+
+    <main id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero__background">
+        <div class="hero__overlay"></div>
+        <div class="hero__pattern"></div>
+      </div>
+      
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <i class="fas fa-shield-alt"></i>
+            <span data-i18n="hero.badge">Bhrugunand Legal Firm</span>
+          </div>
+          
+          <h1 id="hero-title">
+            <span class="hero__title-main" data-i18n="hero.title.main">Committed to Justice,</span>
+            <span class="hero__title-sub" data-i18n="hero.title.sub">Dedicated to You</span>
+          </h1>
+          
+          <p class="hero__lead" data-i18n="hero.lead">Professional counsel for civil, criminal, family and documentation matters with over two decades of legal expertise.</p>
+          
+          <div class="hero__features">
+            <div class="hero__feature">
+              <i class="fas fa-check-circle"></i>
+              <span data-i18n="hero.features.expert">Expert Legal Representation</span>
+            </div>
+            <div class="hero__feature">
+              <i class="fas fa-check-circle"></i>
+              <span data-i18n="hero.features.notary">Comprehensive Notary Services</span>
+            </div>
+            <div class="hero__feature">
+              <i class="fas fa-check-circle"></i>
+              <span data-i18n="hero.features.personalized">Personalized Legal Solutions</span>
+            </div>
+          </div>
+          
+          <div class="hero__actions">
+            <a class="button button--primary hero__cta" href="#contact">
+              <i class="fas fa-calendar-check"></i>
+              <span data-i18n="hero.cta.consultation">Book a Consultation</span>
+            </a>
+            <a class="button button--ghost hero__secondary" href="#practice">
+              <i class="fas fa-briefcase"></i>
+              <span data-i18n="hero.cta.services">Explore Services</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero__visual" role="img" aria-label="Advocate portrait">
+          <div class="hero__image-container">
+            <div class="avatar" aria-hidden="true">GP</div>
+            <div class="hero__image-decoration">
+              <!-- <div class="decoration-circle"></div> -->
+              <!-- <div class="decoration-circle"></div> -->
+              <!-- <div class="decoration-circle"></div> -->
+            </div>
+          </div>
+          
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-number">15+</span>
+              <span class="hero__stat-label" data-i18n="hero.stats.experience">Years Experience</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number">1000+</span>
+              <span class="hero__stat-label" data-i18n="hero.stats.cases">Cases Handled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section id="details" class="section section--alt" aria-labelledby="details-title">
+      <div class="container">
+        <h2 id="details-title" class="section__title" data-i18n="details.title">Advocate & Notary Details</h2>
+        <div class="grid grid--2">
+          <div class="info-card">
+            <h3 data-i18n="details.profile.title">Profile</h3>
+            <p><strong><span data-i18n="details.profile.name">Name:</span></strong> Adv. GaneshLal R. Pariyal</p>
+            <p><strong><span data-i18n="details.profile.qualifications">Qualifications:</span></strong> B.Com, M.I.R.P.M, LL.B.</p>
+            <p><strong><span data-i18n="details.profile.registration">Government Registration:</span></strong> Government of India, Notary, Reg. No. 31782</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="details.office.title">Office</h3>
+            <p data-i18n="details.office.address">Ganesh Bhavan,<br/>Ranpise Nagar,<br/>Akola, Maharashtra, India</p>
+            <p><strong><span data-i18n="details.office.mobile">Mobile:</span></strong> <a class="link" href="tel:+919822711822">+91 98227 11822</a></p>
+            <p><strong><span data-i18n="details.office.timings">Office Timings</span></strong><br/><span data-i18n="details.office.morning">Morning: 10:00 AM – 11:30 PM</span><br/><span data-i18n="details.office.evening">Evening: 6:00 PM – 9:00 PM</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    
+
+    <section id="practice" class="section" aria-labelledby="practice-title">
+      <div class="container">
+        <div class="practice-header">
+          <h2 id="practice-title" class="section__title" data-i18n="practice.title">Practice Areas</h2>
+          <p class="section__subtitle" data-i18n="practice.subtitle">Comprehensive legal services with expertise across multiple practice areas</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.civil.title">Civil & Criminal Cases</h3>
+              <p class="practice-card__description" data-i18n="practice.civil.description">Expert representation in civil disputes and criminal defense matters</p>
+            </div>
+          </article>
+        
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.affidavits.title">Affidavits</h3>
+              <p class="practice-card__description" data-i18n="practice.affidavits.description">Professional affidavit preparation and notarization services</p>
+            </div>
+          </article>
+        
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.partnership.title">Partnership Deeds</h3>
+              <p class="practice-card__description" data-i18n="practice.partnership.description">Comprehensive partnership agreement drafting and legal consultation</p>
+            </div>
+          </article>
+          
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.agreement.title">Agreement Drafting</h3>
+              <p class="practice-card__description" data-i18n="practice.agreement.description">Professional legal document drafting for various business needs</p>
+            </div>
+          </article>
+        
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.property.title">Property Purchase/Sale</h3>
+              <p class="practice-card__description" data-i18n="practice.property.description">Legal assistance for real estate transactions and property documentation</p>
+            </div>
+          </article>
+          
+          <article class="practice-card">
+            <div class="practice-card__icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="practice-card__content">
+              <h3 class="practice-card__title" data-i18n="practice.poa.title">Power of Attorney</h3>
+              <p class="practice-card__description" data-i18n="practice.poa.description">Power of attorney documentation and legal representation services</p>
+            </div>
+          </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.contracts.title">Contracts</h3>
+            <p class="practice-card__description" data-i18n="practice.contracts.description">Contract review, drafting, and legal consultation services</p>
+          </div>
+        </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.mortgage.title">Mortgage Deeds</h3>
+            <p class="practice-card__description" data-i18n="practice.mortgage.description">Mortgage documentation and property financing legal services</p>
+          </div>
+        </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.institution.title">Institution Registration</h3>
+            <p class="practice-card__description" data-i18n="practice.institution.description">Legal assistance for institution and organization registration</p>
+          </div>
+        </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.marriage.title">Marriage Registration</h3>
+            <p class="practice-card__description" data-i18n="practice.marriage.description">Marriage registration and related legal documentation services</p>
+          </div>
+        </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.vehicle.title">Vehicle Purchase/Sale</h3>
+            <p class="practice-card__description" data-i18n="practice.vehicle.description">Legal documentation for vehicle transactions and transfers</p>
+          </div>
+        </article>
+        
+        <article class="practice-card">
+          <div class="practice-card__icon">
+            <i class="fas fa-stamp"></i>
+          </div>
+          <div class="practice-card__content">
+            <h3 class="practice-card__title" data-i18n="practice.notary.title">Other Notary Work</h3>
+            <p class="practice-card__description" data-i18n="practice.notary.description">Comprehensive notary services for various legal documentation needs</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    </section>
+
+    <section id="associations" class="section associations-section" aria-labelledby="associations-title">
+      <div class="container">
+        <div class="associations-header">
+          <h2 id="associations-title" class="section__title" data-i18n="associations.title">Panel Associations &amp; Clients</h2>
+          <p class="section__subtitle associations-subtext" data-i18n="associations.subtitle">As a trusted legal advisor, I have been empaneled and associated with several government bodies, financial institutions, and reputed organizations in Akola and across Maharashtra. My role as a panel advocate reflects my professional credibility and longstanding service in the legal field.</p>
+        </div>
+
+        <div class="associations-carousel">
+          <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous slide" data-i18n="carousel.prev"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel">
+            <div class="carousel__track">
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-bus"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.msrtc.name">Maharashtra State Road Transport Corporation (MSRTC)</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-id-badge"></i> <span data-i18n="associations.msrtc.role">Panel Advocate — Akola Division</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.msrtc.info">Providing expert legal counsel in civil, criminal, and transport-related matters to support organizational operations and compliance.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-building-columns"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.zp.name">Zilla Parishad, Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-scale-balanced"></i> <span data-i18n="associations.zp.role">Legal Counsel</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.zp.info">Representing the institution in litigation, contracts, and advisory services for administrative and governance matters.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-city"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.amc.name">Akola Municipal Corporation (AMC)</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-id-badge"></i> <span data-i18n="associations.amc.role">Panel Advocate / Legal Advisor</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.amc.info">Offering professional legal support for municipal governance, regulatory compliance, and public interest litigations.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-building-columns"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.agresan.name">Agresan Nagri Co-operative Bank Ltd., Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-scale-balanced"></i> <span data-i18n="associations.agresan.role">Legal Advisor — Banking &amp; Recovery Matters</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.agresan.info">Providing guidance in loan recovery cases, compliance with financial regulations, and legal documentation.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-building-columns"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.samitra_bank.name">Samitra Urban Co-operative Bank Ltd., Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-scale-balanced"></i> <span data-i18n="associations.samitra_bank.role">Legal Counsel</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.samitra_bank.info">Advising on banking laws, compliance requirements, loan disputes, and cooperative legal frameworks.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-users"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.society.name">Samitra Nagri Co-operative Society, Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-id-badge"></i> <span data-i18n="associations.society.role">Panel Advocate</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.society.info">Handling legal matters related to cooperative society governance, member disputes, and documentation.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-building"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.nisarga.name">Nisarga Builders and Developers, Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-scale-balanced"></i> <span data-i18n="associations.nisarga.role">Legal Advisor — Property &amp; Development Matters</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.nisarga.info">Providing legal support in real estate, property documentation, contract drafting, and builder-client disputes.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-handshake"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.credai.name">Credai Association, Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-id-badge"></i> <span data-i18n="associations.credai.role">Association Legal Advisor</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.credai.info">Advising the association on legal policies, dispute resolution, and compliance with trade and business laws.</p>
+              </article></div>
+
+              <div class="carousel__slide"><article class="association-card">
+                <div class="association-card__icon"><i class="fas fa-beer-mug-empty"></i></div>
+                <h3 class="association-card__name" data-i18n="associations.beer.name">Pachim Varad Beer Shoppe Association, Akola</h3>
+                <div class="association-meta">
+                  <span class="meta-chip role-chip"><i class="fas fa-id-badge"></i> <span data-i18n="associations.beer.role">Panel Advocate</span></span>
+                </div>
+                <p class="association-card__info" data-i18n="associations.beer.info">Representing the association in legal disputes, licensing matters, and regulatory compliance issues.</p>
+              </article></div>
+            </div>
+          </div>
+          <button class="carousel__arrow carousel__arrow--next" aria-label="Next slide" data-i18n="carousel.next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="carousel__dots" role="tablist" aria-label="Associations pagination" data-i18n="carousel.pagination"></div>
+      </div>
+    </section>
+
+    <section id="handled-cases" class="section handled-cases-section" aria-labelledby="cases-title">
+      <div class="container">
+        <div class="cases-header">
+          <h2 id="cases-title" class="section__title" data-i18n="cases.title">Handled Cases</h2>
+          <p class="section__subtitle cases-subtext" data-i18n="cases.subtitle">Explore representative matters handled across key areas of law.</p>
+        </div>
+
+        <div class="cases-container">
+          <!-- Civil Law -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-civil">
+              <span class="case-btn__icon"><i class="fas fa-balance-scale"></i></span>
+              <span class="case-btn__label" data-i18n="cases.civil.title">Civil Law</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-civil" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.civil.li1">Contractual disputes and specific performance suits</li>
+                  <li data-i18n="cases.civil.li2">Injunctions, declarations, and damages claims</li>
+                  <li data-i18n="cases.civil.li3">Consumer complaints and deficiency of service cases</li>
+                  <li data-i18n="cases.civil.li4">Execution and recovery proceedings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Motor Accident Claims -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-motor">
+              <span class="case-btn__icon"><i class="fas fa-car-crash"></i></span>
+              <span class="case-btn__label" data-i18n="cases.motor.title">Motor Accident Claims<br>(MACT Cases)</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-motor" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.motor.li1">Compensation for injury in road accidents</li>
+                  <li data-i18n="cases.motor.li2">Compensation for death due to motor accidents (to legal heirs)</li>
+                  <li data-i18n="cases.motor.li3">Permanent disability / loss of income claims</li>
+                  <li data-i18n="cases.motor.li4">Insurance claim disputes related to accidents</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Criminal Law -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-criminal">
+              <span class="case-btn__icon"><i class="fas fa-gavel"></i></span>
+              <span class="case-btn__label" data-i18n="cases.criminal.title">Criminal Law</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-criminal" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.criminal.li1">Anticipatory and regular bail applications</li>
+                  <li data-i18n="cases.criminal.li2">Trial defense and quashing petitions</li>
+                  <li data-i18n="cases.criminal.li3">Negotiable Instruments Act (S.138) prosecutions</li>
+                  <li data-i18n="cases.criminal.li4">Appeals and revisions before appellate courts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Family & Matrimonial Law -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-family">
+              <span class="case-btn__icon"><i class="fas fa-heart"></i></span>
+              <span class="case-btn__label" data-i18n="cases.family.title">Family &amp; Matrimonial Law</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-family" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.family.li1">Divorce, maintenance, and custody matters</li>
+                  <li data-i18n="cases.family.li2">Domestic violence and protection orders</li>
+                  <li data-i18n="cases.family.li3">Mutual consent settlements and mediation</li>
+                  <li data-i18n="cases.family.li4">Adoption and guardianship proceedings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property & Real Estate Law -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-property">
+              <span class="case-btn__icon"><i class="fas fa-building"></i></span>
+              <span class="case-btn__label" data-i18n="cases.property.title">Property &amp; Real Estate Law</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-property" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.property.li1">Title due diligence and conveyancing</li>
+                  <li data-i18n="cases.property.li2">RERA and development agreement disputes</li>
+                  <li data-i18n="cases.property.li3">Possession, tenancy, and eviction litigation</li>
+                  <li data-i18n="cases.property.li4">Partition, succession, and inheritance claims</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financial & Recovery Matters -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-financial">
+              <span class="case-btn__icon"><i class="fas fa-piggy-bank"></i></span>
+              <span class="case-btn__label" data-i18n="cases.financial.title">Financial &amp; Recovery Matters</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-financial" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.financial.li1">Loan recovery and SARFAESI actions</li>
+                  <li data-i18n="cases.financial.li2">Banking compliance and documentation disputes</li>
+                  <li data-i18n="cases.financial.li3">Arbitration for commercial recoveries</li>
+                  <li data-i18n="cases.financial.li4">Cheque bounce and debt enforcement cases</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Eviction & Possession -->
+          <div class="case-item">
+            <button class="case-btn" role="button" aria-expanded="false" aria-controls="panel-eviction">
+              <span class="case-btn__icon"><i class="fas fa-home"></i></span>
+              <span class="case-btn__label" data-i18n="cases.eviction.title">Eviction &amp; Possession</span>
+              <span class="case-btn__arrow" data-i18n="cases.arrow"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div id="panel-eviction" class="case-panel" aria-hidden="true">
+              <div class="case-panel__inner">
+                <ul>
+                  <li data-i18n="cases.eviction.li1">Tenant Eviction (Non-payment / Violation of Lease)</li>
+                  <li data-i18n="cases.eviction.li2">Landlord's Bonafide Requirement Cases</li>
+                  <li data-i18n="cases.eviction.li3">Illegal Possession / Encroachment Cases</li>
+                  <li data-i18n="cases.eviction.li4">Overstaying Tenant / Holding Over</li>
+                  <li data-i18n="cases.eviction.li5">Property Recovery after Sale / Transfer</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--alt" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section__title" data-i18n="contact.title">Contact</h2>
+        <div class="grid grid--2">
+          <form id="contact-form" class="form" action="https://formspree.io/f/xjkolnwz" method="POST" aria-describedby="contact-help" novalidate>
+  <div class="form__row">
+    <label for="name" data-i18n="contact.form.name">Full Name</label>
+    <input id="name" name="name" required />
+  </div>
+  <div class="form__row">
+    <label for="email" data-i18n="contact.form.email">Email</label>
+    <input id="email" name="email" type="email" required />
+  </div>
+  <div class="form__row">
+    <label for="message" data-i18n="contact.form.message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+  <div class="form__actions">
+    <button class="button button--primary" type="submit"><span data-i18n="contact.form.send">Send</span></button>
+  </div>
+  <p id="contact-help" class="muted" data-i18n="contact.form.help">We will only use your details to reply.</p>
+  <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+</form>
+          <div class="info-card">
+            <h3 data-i18n="contact.address.title">Address & Phone</h3>
+            <p data-i18n="details.office.address">Ganesh Bhavan, Ranpise Nagar, Akola, Maharashtra, India</p>
+            <p><strong data-i18n="details.office.mobile">Mobile:</strong> <a class="link" href="tel:+919822711822">+91 98227 11822</a></p>
+            <div class="disclaimer"><strong data-i18n="contact.disclaimer.label">Disclaimer:</strong><span data-i18n="contact.disclaimer">This website does not constitute legal advice and is intended solely for informational purposes. Viewing or using this website does not create an attorney-client relationship.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <div class="footer__content">
+          <p>&copy; <span id="year"></span> Adv. GaneshLal R. Pariyal</p>
+          <p class="footer__copyright" data-i18n="footer.copyright">All rights reserved to the Law Office of Lawyer Adv. Ganesh Pariyal</p>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/ganesh.pariyal/" target="_blank" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+        <ul class="footer__nav">
+          <li><a href="#top" data-i18n="footer.top">Top</a></li><li><a href="#details" data-i18n="footer.details">Details</a></li><li><a href="#practice" data-i18n="footer.services">Services</a></li><li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-i18n="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
